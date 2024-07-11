@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginFlowMAUI.Pages.LoginPage"
+             Title="LoginPage">
+
+    <ContentPage.Content>
+        <Grid Padding="25" RowSpacing="25" ColumnSpacing="25">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Login Page" 
+                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center"
+                   FontSize="Large" />
+
+            <Entry Placeholder="Username"
+                   Text="{Binding Username}"
+                   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                   HorizontalOptions="FillAndExpand" />
+
+                  <Entry Placeholder="Password"
+                       IsPassword="True"
+                       Text="{Binding Password}"
+                       Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                       HorizontalOptions="FillAndExpand" 
+                       HeightRequest="40"/>
+
+            <Button Text="Login"
+                    Command="{Binding LoginCommand}"
+                    Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                    HorizontalOptions="FillAndExpand" />
+
+            <Label Text="{Binding LoginMessage}" 
+                   Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center"
+                   TextColor="Red" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

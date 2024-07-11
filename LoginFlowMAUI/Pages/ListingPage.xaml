@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginFlowMAUI.Pages.ListingPage"
+             Title="ListingPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout
+             Padding="30,0"
+             Spacing="25">
+                <Label
+                 Text="Todo List"
+                 Style="{StaticResource Headline}"
+                 SemanticProperties.HeadingLevel="Level1" />
+                <!-- CollectionView to display the list of tasks -->
+                <CollectionView x:Name="TasksCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" Margin="5" BorderColor="Gray">
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Title}" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Description}" FontSize="14"/>
+                                    <Label Text="{Binding CreatedAt}" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="{Binding Completed}" FontSize="14"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
